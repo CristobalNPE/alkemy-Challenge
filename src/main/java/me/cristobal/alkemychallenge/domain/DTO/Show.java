@@ -18,7 +18,7 @@ public class Show {
   private RATING rating;
   private List<Character> associatedCharacters;
 
-  private Genre genre;
+  private List<Genre> genres;
 
 
   public enum RATING {
