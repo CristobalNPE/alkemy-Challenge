@@ -1,9 +1,7 @@
 package me.cristobal.alkemychallenge.domain.service;
 
 import lombok.RequiredArgsConstructor;
-import me.cristobal.alkemychallenge.domain.DTO.Character;
 import me.cristobal.alkemychallenge.domain.DTO.Show;
-import me.cristobal.alkemychallenge.domain.repository.CharacterRepository;
 import me.cristobal.alkemychallenge.domain.repository.ShowRepository;
 import org.springframework.stereotype.Service;
 

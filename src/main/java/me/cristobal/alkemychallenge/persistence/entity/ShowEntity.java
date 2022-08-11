@@ -4,6 +4,7 @@ import lombok.*;
 import me.cristobal.alkemychallenge.domain.DTO.Show;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import java.sql.Date;
@@ -24,9 +25,11 @@ public class ShowEntity {
   private Show.RATING calificacion;
 
   @ManyToMany
+  @ToString.Exclude
   private List<Personaje> personajesAsociados;
 
-  @ManyToMany
+  @ManyToMany(fetch = FetchType.LAZY)
+  @ToString.Exclude
   private List<Genero> generos;
 
 
@@ -37,7 +40,7 @@ public class ShowEntity {
     FOUR(4),
     FIVE(5);
 
-    private int numValue;
+    private final int numValue;
 
     RATING(int numValue) {
       this.numValue = numValue;
