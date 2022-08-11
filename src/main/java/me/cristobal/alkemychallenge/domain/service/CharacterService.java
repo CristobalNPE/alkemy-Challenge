@@ -33,4 +33,12 @@ public class CharacterService {
               return true;
             }).orElse(false);
   }
+
+  public List<Character> findByAge(int age) {
+    return repository.findByAge(age);
+  }
+
+  public List<Character> findByWeight(Double weight) {
+    return repository.findByWeight(weight);
+  }
 }

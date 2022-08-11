@@ -14,4 +14,8 @@ public interface CharacterRepository {
   Character save(Character character);
 
   void deleteByName(String characterName);
+
+  List<Character> findByAge(int age);
+
+  List<Character> findByWeight(Double age);
 }

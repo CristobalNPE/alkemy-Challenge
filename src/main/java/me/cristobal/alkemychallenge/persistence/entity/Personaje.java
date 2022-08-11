@@ -6,6 +6,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import java.util.List;
@@ -24,7 +25,8 @@ public class Personaje {
   private Double peso;
   private String historia;
 
-  @ManyToMany
+  @ManyToMany(fetch = FetchType.LAZY)
+  @ToString.Exclude
   private List<ShowEntity> showsAsociados;
 
 }

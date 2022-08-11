@@ -20,7 +20,7 @@ public class PersonajeRepository implements CharacterRepository {
 
   @Override
   public List<Character> findAll() {
-    return mapper.toCharacters((List<Personaje>) crud.findAll());
+    return mapper.toCharacters(crud.findAll());
   }
 
   @Override
@@ -38,5 +38,15 @@ public class PersonajeRepository implements CharacterRepository {
   @Override
   public void deleteByName(String characterName) {
     crud.deleteById(characterName);
+  }
+
+  @Override
+  public List<Character> findByAge(int age) {
+    return mapper.toCharacters(crud.findByEdad(age));
+  }
+
+  @Override
+  public List<Character> findByWeight(Double weight) {
+    return mapper.toCharacters(crud.findByPeso(weight));
   }
 }
