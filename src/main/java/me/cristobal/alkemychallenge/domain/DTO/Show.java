@@ -12,12 +12,13 @@ import java.util.List;
 @NoArgsConstructor
 public class Show {
 
-
   private String img;
   private String title;
   private Date creationDate;
   private RATING rating;
   private List<Character> associatedCharacters;
+
+  private Genre genre;
 
 
   public enum RATING {
