@@ -1,5 +1,6 @@
 package me.cristobal.alkemychallenge;
 
+import me.cristobal.alkemychallenge.domain.DTO.RATING;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -8,6 +9,8 @@ public class AlkemyChallengeApplication {
 
   public static void main(String[] args) {
     SpringApplication.run(AlkemyChallengeApplication.class, args);
+
+
   }
 
 }
