@@ -13,5 +13,5 @@ public class Genre {
 
   private String name;
   private String img;
-  private List<ShowData> shows;
+  private List<Show> shows;
 }

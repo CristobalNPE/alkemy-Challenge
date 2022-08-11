@@ -16,6 +16,6 @@ public class Character {
   private Integer age;
   private Double weight;
   private String history;
-  private List<ShowData> associatedShows;  //Show es interfaz para peliculas/series(movies/series/)
+  private List<Show> associatedShows;
 
 }
