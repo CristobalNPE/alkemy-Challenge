@@ -1,9 +1,7 @@
 package me.cristobal.alkemychallenge.web.restController;
 
 import lombok.RequiredArgsConstructor;
-import me.cristobal.alkemychallenge.domain.DTO.Character;
 import me.cristobal.alkemychallenge.domain.DTO.Show;
-import me.cristobal.alkemychallenge.domain.service.CharacterService;
 import me.cristobal.alkemychallenge.domain.service.ShowService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
