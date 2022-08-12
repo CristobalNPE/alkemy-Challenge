@@ -2,10 +2,7 @@ package me.cristobal.alkemychallenge.persistence.entity;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
@@ -19,7 +16,7 @@ public class Genero {
   private String nombre;
   private String imagen;
 
-  @ManyToMany(fetch = FetchType.LAZY)
+  @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
   @ToString.Exclude
   private List<ShowEntity> listaShows;
 }

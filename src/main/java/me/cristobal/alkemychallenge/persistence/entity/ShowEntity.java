@@ -3,10 +3,7 @@ package me.cristobal.alkemychallenge.persistence.entity;
 import lombok.*;
 import me.cristobal.alkemychallenge.domain.DTO.Show;
 
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.*;
 import java.sql.Date;
 import java.util.List;
 
@@ -28,7 +25,7 @@ public class ShowEntity {
   @ToString.Exclude
   private List<Personaje> personajesAsociados;
 
-  @ManyToMany(fetch = FetchType.LAZY)
+  @ManyToMany
   @ToString.Exclude
   private List<Genero> generos;
 

@@ -5,10 +5,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
@@ -25,7 +22,7 @@ public class Personaje {
   private Double peso;
   private String historia;
 
-  @ManyToMany(fetch = FetchType.LAZY)
+  @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
   @ToString.Exclude
   private List<ShowEntity> showsAsociados;
 
