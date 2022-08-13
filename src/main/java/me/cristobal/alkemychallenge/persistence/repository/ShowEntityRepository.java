@@ -8,10 +8,12 @@ import me.cristobal.alkemychallenge.persistence.entity.ShowEntity;
 import me.cristobal.alkemychallenge.persistence.mapper.ShowMapper;
 import org.springframework.stereotype.Repository;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
 @Repository
+@Transactional
 @RequiredArgsConstructor
 public class ShowEntityRepository implements ShowRepository {
 
@@ -20,7 +22,7 @@ public class ShowEntityRepository implements ShowRepository {
 
   @Override
   public List<Show> findAll() {
-    return mapper.toShows((List<ShowEntity>) crud.findAll());
+    return mapper.toShows(crud.findAll());
   }
 
   @Override

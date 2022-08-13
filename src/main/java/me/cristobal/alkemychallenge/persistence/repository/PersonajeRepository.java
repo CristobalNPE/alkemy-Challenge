@@ -7,10 +7,12 @@ import me.cristobal.alkemychallenge.persistence.CRUD.PersonajeCRUD;
 import me.cristobal.alkemychallenge.persistence.mapper.CharacterMapper;
 import org.springframework.stereotype.Repository;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
 @Repository
+@Transactional
 @RequiredArgsConstructor
 public class PersonajeRepository implements CharacterRepository {
 

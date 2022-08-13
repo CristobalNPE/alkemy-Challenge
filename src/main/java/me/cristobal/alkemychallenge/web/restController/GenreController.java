@@ -18,7 +18,13 @@ public class GenreController {
 
   @PostMapping("/save")
   public ResponseEntity<Genre> save(@RequestBody Genre genre) {
-    return new ResponseEntity<>(service.save(genre), HttpStatus.OK);
+    Genre genreToSave = service.save(genre);
+
+    if (genreToSave != null) {
+      return new ResponseEntity<>(genreToSave, HttpStatus.OK);
+    }
+    return new ResponseEntity<>(null, HttpStatus.NOT_ACCEPTABLE);
+
   }
 
   @GetMapping

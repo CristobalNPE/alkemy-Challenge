@@ -5,10 +5,12 @@ import me.cristobal.alkemychallenge.domain.DTO.Show;
 import me.cristobal.alkemychallenge.domain.repository.ShowRepository;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
 @Service
+@Transactional
 @RequiredArgsConstructor
 public class ShowService {
 

@@ -8,10 +8,12 @@ import me.cristobal.alkemychallenge.persistence.entity.Genero;
 import me.cristobal.alkemychallenge.persistence.mapper.GenreMapper;
 import org.springframework.stereotype.Repository;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
 @Repository
+@Transactional
 @RequiredArgsConstructor
 public class GeneroRepository implements GenreRepository {
 

@@ -5,10 +5,12 @@ import me.cristobal.alkemychallenge.domain.DTO.Genre;
 import me.cristobal.alkemychallenge.domain.repository.GenreRepository;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
 @Service
+@Transactional
 @RequiredArgsConstructor
 public class GenreService {
 
@@ -27,6 +29,9 @@ public class GenreService {
   }
 
   public Genre save(Genre genre) {
+    if (repository.findByName(genre.getName()).isPresent()) {
+      return null;
+    }
     return repository.save(genre);
   }
 
