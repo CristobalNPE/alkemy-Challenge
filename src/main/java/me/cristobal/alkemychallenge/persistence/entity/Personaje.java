@@ -15,15 +15,18 @@ import java.util.List;
 @RequiredArgsConstructor
 public class Personaje {
 
-  private String imagen;
   @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  private Long id;
+  private String imagen;
   private String nombre;
   private Integer edad;
   private Double peso;
   private String historia;
 
-  @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+  @ManyToMany(cascade = CascadeType.ALL)
   @ToString.Exclude
+
   private List<ShowEntity> showsAsociados;
 
 }

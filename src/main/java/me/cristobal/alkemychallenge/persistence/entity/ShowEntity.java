@@ -2,6 +2,7 @@ package me.cristobal.alkemychallenge.persistence.entity;
 
 import lombok.*;
 import me.cristobal.alkemychallenge.domain.DTO.Show;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.sql.Date;
@@ -14,18 +15,19 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ShowEntity {
 
-  private String imagen;
-
   @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  private Long id;
+  private String imagen;
   private String titulo;
   private Date fechaCreacion;
   private Show.RATING calificacion;
 
-  @ManyToMany
+  @ManyToMany(cascade = CascadeType.ALL)
   @ToString.Exclude
   private List<Personaje> personajesAsociados;
 
-  @ManyToMany
+  @ManyToMany(cascade = CascadeType.ALL)
   @ToString.Exclude
   private List<Genero> generos;
 

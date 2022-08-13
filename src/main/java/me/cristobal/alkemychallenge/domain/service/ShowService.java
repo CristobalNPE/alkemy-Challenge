@@ -22,14 +22,18 @@ public class ShowService {
     return repository.findByName(showName);
   }
 
+  public Optional<Show> findById(Long showId) {
+    return repository.findById(showId);
+  }
+
   public Show save(Show show) {
     return repository.save(show);
   }
 
-  public boolean delete(String showName) {
-    return findByName(showName)
+  public boolean delete(Long showId) {
+    return findById(showId)
             .map(show -> {
-              repository.deleteByName(showName);
+              repository.deleteById(showId);
               return true;
             }).orElse(false);
   }

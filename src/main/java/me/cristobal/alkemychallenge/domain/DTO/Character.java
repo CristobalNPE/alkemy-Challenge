@@ -11,6 +11,7 @@ import java.util.List;
 @AllArgsConstructor
 public class Character {
 
+  private Long id;
   private String img;
   private String name;
   private Integer age;

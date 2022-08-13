@@ -13,6 +13,7 @@ import java.util.List;
 public interface GenreMapper {
 
   @Mappings({
+          @Mapping(source = "id", target = "id"),
           @Mapping(source = "nombre", target = "name"),
           @Mapping(source = "imagen", target = "img"),
           @Mapping(source = "listaShows", target = "showList")

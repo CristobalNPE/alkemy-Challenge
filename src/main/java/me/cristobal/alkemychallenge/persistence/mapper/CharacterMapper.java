@@ -13,6 +13,7 @@ import java.util.List;
 public interface CharacterMapper {
 
   @Mappings({
+          @Mapping(source = "id", target = "id"),
           @Mapping(source = "imagen", target = "img"),
           @Mapping(source = "nombre", target = "name"),
           @Mapping(source = "edad", target = "age"),

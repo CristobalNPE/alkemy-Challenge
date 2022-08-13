@@ -13,6 +13,7 @@ import java.util.List;
 public interface ShowMapper {
 
   @Mappings({
+          @Mapping(source = "id", target = "id"),
           @Mapping(source = "imagen", target = "img"),
           @Mapping(source = "titulo", target = "title"),
           @Mapping(source = "fechaCreacion", target = "creationDate"),

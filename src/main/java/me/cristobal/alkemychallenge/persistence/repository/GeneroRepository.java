@@ -24,9 +24,14 @@ public class GeneroRepository implements GenreRepository {
   }
 
   @Override
-  public Optional<Genre> findByName(String genreId) {
+  public Optional<Genre> findById(Long genreId) {
+    return crud.findById(genreId).map(mapper::toGenre);
+  }
+
+  @Override
+  public Optional<Genre> findByName(String genreName) {
     return crud
-            .findById(genreId)
+            .findByNombre(genreName)
             .map(mapper::toGenre);
   }
 
@@ -36,7 +41,7 @@ public class GeneroRepository implements GenreRepository {
   }
 
   @Override
-  public void deleteByName(String genreId) {
+  public void deleteById(Long genreId) {
     crud.deleteById(genreId);
   }
 }

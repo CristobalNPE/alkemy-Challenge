@@ -11,9 +11,11 @@ public interface ShowRepository {
 
   Optional<Show> findByName(String showName);
 
+  Optional<Show> findById(Long showId);
+
   Show save(Show show);
 
-  void deleteByName(String showName);
+  void deleteById(Long showId);
 
 
 }

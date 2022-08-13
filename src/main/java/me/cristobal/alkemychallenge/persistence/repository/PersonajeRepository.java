@@ -4,7 +4,6 @@ import lombok.RequiredArgsConstructor;
 import me.cristobal.alkemychallenge.domain.DTO.Character;
 import me.cristobal.alkemychallenge.domain.repository.CharacterRepository;
 import me.cristobal.alkemychallenge.persistence.CRUD.PersonajeCRUD;
-import me.cristobal.alkemychallenge.persistence.entity.Personaje;
 import me.cristobal.alkemychallenge.persistence.mapper.CharacterMapper;
 import org.springframework.stereotype.Repository;
 
@@ -24,9 +23,16 @@ public class PersonajeRepository implements CharacterRepository {
   }
 
   @Override
+  public Optional<Character> findById(Long characterId) {
+    return crud
+            .findById(characterId)
+            .map(mapper::toCharacter);
+  }
+
+  @Override
   public Optional<Character> findByName(String characterName) {
     return crud
-            .findById(characterName)
+            .findByNombre(characterName)
             .map(mapper::toCharacter);
   }
 
@@ -36,8 +42,8 @@ public class PersonajeRepository implements CharacterRepository {
   }
 
   @Override
-  public void deleteByName(String characterName) {
-    crud.deleteById(characterName);
+  public void deleteById(Long characterId) {
+    crud.deleteById(characterId);
   }
 
   @Override

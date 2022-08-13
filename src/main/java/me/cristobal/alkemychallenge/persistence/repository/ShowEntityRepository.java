@@ -24,9 +24,16 @@ public class ShowEntityRepository implements ShowRepository {
   }
 
   @Override
-  public Optional<Show> findByName(String showName) {
+  public Optional<Show> findByName(String showTitle) {
     return crud
-            .findById(showName)
+            .findByTitulo(showTitle)
+            .map(mapper::toShow);
+  }
+
+  @Override
+  public Optional<Show> findById(Long showId) {
+    return crud
+            .findById(showId)
             .map(mapper::toShow);
   }
 
@@ -36,7 +43,8 @@ public class ShowEntityRepository implements ShowRepository {
   }
 
   @Override
-  public void deleteByName(String showName) {
-    crud.deleteById(showName);
+  public void deleteById(Long showId) {
+    crud.deleteById(showId);
+
   }
 }

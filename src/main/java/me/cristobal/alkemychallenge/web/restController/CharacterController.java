@@ -26,5 +26,10 @@ public class CharacterController {
     return new ResponseEntity<>(service.findAll(), HttpStatus.OK);
   }
 
+  @DeleteMapping("/characters/{id}")
+  public ResponseEntity<String> deleteCharacterById(@PathVariable("id") Long characterId){
+    service.delete()
+  }
+
 
 }

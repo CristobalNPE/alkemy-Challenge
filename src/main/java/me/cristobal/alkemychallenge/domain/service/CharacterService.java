@@ -18,6 +18,10 @@ public class CharacterService {
     return repository.findAll();
   }
 
+  public Optional<Character> findByID(Long characterId) {
+    return repository.findById(characterId);
+  }
+
   public Optional<Character> findByName(String characterName) {
     return repository.findByName(characterName);
   }
@@ -25,16 +29,13 @@ public class CharacterService {
   public Character save(Character character) {
 
 
-
-
-
     return repository.save(character);
   }
 
-  public boolean delete(String characterName) {
-    return findByName(characterName)
+  public boolean delete(Long characterId) {
+    return findByID(characterId)
             .map(character -> {
-              repository.deleteByName(characterName);
+              repository.deleteById(characterId);
               return true;
             }).orElse(false);
   }

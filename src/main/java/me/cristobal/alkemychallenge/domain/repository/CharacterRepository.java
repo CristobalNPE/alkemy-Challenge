@@ -9,11 +9,13 @@ public interface CharacterRepository {
 
   List<Character> findAll();
 
+  Optional<Character> findById(Long characterId);
+
   Optional<Character> findByName(String characterName);
 
   Character save(Character character);
 
-  void deleteByName(String characterName);
+  void deleteById(Long characterId);
 
   List<Character> findByAge(int age);
 

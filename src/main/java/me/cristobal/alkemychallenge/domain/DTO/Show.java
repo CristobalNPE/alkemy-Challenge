@@ -12,6 +12,7 @@ import java.util.List;
 @NoArgsConstructor
 public class Show {
 
+  private Long id;
   private String img;
   private String title;
   private Date creationDate;

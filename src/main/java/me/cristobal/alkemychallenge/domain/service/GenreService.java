@@ -22,14 +22,18 @@ public class GenreService {
     return repository.findByName(genreName);
   }
 
+  public Optional<Genre> findById(Long genreId) {
+    return repository.findById(genreId);
+  }
+
   public Genre save(Genre genre) {
     return repository.save(genre);
   }
 
-  public boolean delete(String genreName) {
-    return findByName(genreName)
+  public boolean delete(Long genreId) {
+    return findById(genreId)
             .map(genre -> {
-              repository.deleteByName(genreName);
+              repository.deleteById(genreId);
               return true;
             }).orElse(false);
   }
